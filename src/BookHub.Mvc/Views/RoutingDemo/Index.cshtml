@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Routing Demo";
+}
+
+<h1>Routing Demo</h1>
+<p>Every link below hits a different routing scenario from <code>RoutingDemoController</code>. Click through, then look at the address bar and compare it to the route template that handled it.</p>
+
+<div class="list-group">
+    <a class="list-group-item list-group-item-action" asp-controller="RoutingDemo" asp-action="Greet">
+        <strong>Conventional routing</strong> - /RoutingDemo/Greet (no {id})
+    </a>
+    <a class="list-group-item list-group-item-action" asp-controller="RoutingDemo" asp-action="Greet" asp-route-id="Sai">
+        <strong>Conventional routing, with route value</strong> - /RoutingDemo/Greet/Sai
+    </a>
+    <a class="list-group-item list-group-item-action" href="/RoutingDemo/Book/42">
+        <strong>:int constraint</strong> - /RoutingDemo/Book/42 &rarr; BookById
+    </a>
+    <a class="list-group-item list-group-item-action" href="/RoutingDemo/Book/mybook">
+        <strong>:alpha constraint</strong> - /RoutingDemo/Book/mybook &rarr; BookBySlug
+    </a>
+    <a class="list-group-item list-group-item-action" href="/RoutingDemo/Book/42abc">
+        <strong>No constraint matches</strong> - /RoutingDemo/Book/42abc &rarr; expect 404
+    </a>
+    <a class="list-group-item list-group-item-action" asp-controller="RoutingDemo" asp-action="Ping">
+        <strong>Two templates, one action</strong> - /RoutingDemo/Ping
+    </a>
+    <a class="list-group-item list-group-item-action" href="/ping">
+        <strong>Two templates, one action (alt URL)</strong> - /ping
+    </a>
+    <a class="list-group-item list-group-item-action" href="/RoutingDemo/Files/a/b/c.txt">
+        <strong>Catch-all segment</strong> - /RoutingDemo/Files/a/b/c.txt
+    </a>
+    <a class="list-group-item list-group-item-action" asp-controller="RoutingDemo" asp-action="Links">
+        <strong>Reverse routing</strong> - links generated from route values, not hardcoded strings
+    </a>
+</div>

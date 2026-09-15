@@ -1,0 +1,10 @@
+@model PingViewModel
+@{
+    ViewData["Title"] = "Ping";
+}
+
+<h1>@Model.Message</h1>
+<p>Matched via: @Model.MatchedVia</p>
+<p>You could have reached this exact page from either <code>/RoutingDemo/Ping</code> or <code>/ping</code>.</p>
+
+<a asp-controller="RoutingDemo" asp-action="Index">&larr; back to routing demo</a>

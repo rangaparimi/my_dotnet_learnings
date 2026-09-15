@@ -1,0 +1,17 @@
+@model BookViewModel
+@{
+    ViewData["Title"] = "Book";
+}
+
+<h1>Book: @Model.Identifier</h1>
+<dl class="row">
+    <dt class="col-sm-3">Matched via</dt>
+    <dd class="col-sm-9">@Model.MatchedVia</dd>
+    <dt class="col-sm-3">Route template</dt>
+    <dd class="col-sm-9"><code>@Model.RouteUsed</code></dd>
+</dl>
+
+<p>This is the SAME view rendered by two different actions (<code>BookById</code> and <code>BookBySlug</code>) --
+the constraint on each route decided which one ran.</p>
+
+<a asp-controller="RoutingDemo" asp-action="Index">&larr; back to routing demo</a>

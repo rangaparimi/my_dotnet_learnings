@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BookHub.Mvc/BookHub.Mvc.csproj" />
+  </Folder>
+</Solution>

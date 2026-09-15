@@ -1,0 +1,21 @@
+@model GreetViewModel
+@{
+    ViewData["Title"] = "Greet";
+}
+
+<h1>@Model.Message</h1>
+<dl class="row">
+    <dt class="col-sm-3">Matched via</dt>
+    <dd class="col-sm-9">@Model.MatchedVia</dd>
+    <dt class="col-sm-3">Requested id</dt>
+    <dd class="col-sm-9">@(Model.RequestedId ?? "(none -- {id?} is optional)")</dd>
+</dl>
+
+<p>Try changing the URL by hand:</p>
+<ul>
+    <li><a asp-action="Greet">/RoutingDemo/Greet</a></li>
+    <li><a asp-action="Greet" asp-route-id="Alex">/RoutingDemo/Greet/Alex</a></li>
+    <li><a asp-action="Greet" asp-route-id="123">/RoutingDemo/Greet/123</a> (still hits this same action -- no :int constraint here)</li>
+</ul>
+
+<a asp-controller="RoutingDemo" asp-action="Index">&larr; back to routing demo</a>

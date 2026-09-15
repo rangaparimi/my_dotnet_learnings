@@ -1,0 +1,15 @@
+@model FilesViewModel
+@{
+    ViewData["Title"] = "Files";
+}
+
+<h1>Catch-all route</h1>
+<dl class="row">
+    <dt class="col-sm-3">Requested path</dt>
+    <dd class="col-sm-9"><code>@Model.RequestedPath</code></dd>
+    <dt class="col-sm-3">Matched via</dt>
+    <dd class="col-sm-9">@Model.MatchedVia</dd>
+</dl>
+<p>Try editing the URL to add more segments, e.g. <code>/RoutingDemo/Files/one/two/three</code> -- they all land in the single <code>path</code> parameter.</p>
+
+<a asp-controller="RoutingDemo" asp-action="Index">&larr; back to routing demo</a>
