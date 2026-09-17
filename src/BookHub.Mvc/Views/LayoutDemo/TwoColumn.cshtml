@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Two Column Layout";
+    Layout = "_TwoColumnLayout"; // overrides the _ViewStart.cshtml default for THIS view only
+}
+
+<h1>Two-column layout, with sidebar</h1>
+<p>This is the main content column (<code>@@RenderBody()</code> in the layout).</p>
+<p>The sidebar to the right came from the <code>@@section Sidebar { ... }</code> block below.</p>
+
+@section Sidebar {
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Sidebar</h5>
+            <p class="card-text">This content lives in the VIEW, not the layout, but renders
+            wherever the layout calls <code>@@await RenderSectionAsync("Sidebar")</code>.</p>
+        </div>
+    </div>
+}

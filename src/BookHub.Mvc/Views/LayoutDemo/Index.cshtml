@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Layout Views Demo";
+}
+
+<h1>Layout Views Demo</h1>
+<p>This page itself uses the default layout, set globally by <code>Views/_ViewStart.cshtml</code>
+(<code>Layout = "_Layout";</code>). Every link below overrides that default from inside the view.</p>
+
+<div class="list-group">
+    <a class="list-group-item list-group-item-action" asp-controller="LayoutDemo" asp-action="TwoColumn">
+        <strong>Nested layout, with sidebar</strong> - _TwoColumnLayout.cshtml (which itself uses _Layout.cshtml)
+    </a>
+    <a class="list-group-item list-group-item-action" asp-controller="LayoutDemo" asp-action="TwoColumnNoSidebar">
+        <strong>Nested layout, no sidebar section defined</strong> - shows the layout's fallback content
+    </a>
+    <a class="list-group-item list-group-item-action" asp-controller="LayoutDemo" asp-action="Minimal">
+        <strong>Layout = null</strong> - _MinimalLayout.cshtml, no nav bar, no footer, no Bootstrap
+    </a>
+    <a class="list-group-item list-group-item-action" asp-controller="LayoutDemo" asp-action="RequiredSectionDemo">
+        <strong>Required section</strong> - _RequiredSectionLayout.cshtml demands @@section Footer
+    </a>
+</div>

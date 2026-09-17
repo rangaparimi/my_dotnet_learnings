@@ -1,0 +1,26 @@
+@{
+    // NESTED layout: this layout itself sets a Layout, so its own rendered
+    // output gets wrapped INSIDE the site-wide _Layout.cshtml -- the nav bar
+    // and footer from _Layout still surround everything below. Composition,
+    // not duplication: this file only owns the two-column split, nothing else.
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="col-md-9">
+        @RenderBody()
+    </div>
+    <aside class="col-md-3">
+        @* RenderSectionAsync(required: false) lets a view skip @section Sidebar
+           entirely. IsSectionDefined() is how the LAYOUT itself can tell whether
+           that happened, and render a fallback instead of an empty column. *@
+        @if (IsSectionDefined("Sidebar"))
+        {
+            @await RenderSectionAsync("Sidebar")
+        }
+        else
+        {
+            <div class="alert alert-secondary">No sidebar content provided for this page.</div>
+        }
+    </aside>
+</div>

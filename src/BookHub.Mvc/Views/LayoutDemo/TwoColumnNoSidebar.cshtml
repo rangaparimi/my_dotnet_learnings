@@ -1,0 +1,9 @@
+@{
+    ViewData["Title"] = "Two Column Layout (no sidebar)";
+    Layout = "_TwoColumnLayout";
+}
+
+<h1>Two-column layout, no sidebar section defined</h1>
+<p>This view never defines <code>@@section Sidebar</code>. Because <code>_TwoColumnLayout.cshtml</code>
+requested that section with <code>required: false</code> and checks <code>IsSectionDefined("Sidebar")</code>,
+it falls back to its own default content instead of throwing or leaving the column empty.</p>

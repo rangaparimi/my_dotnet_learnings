@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Minimal Layout";
+    Layout = "_MinimalLayout";
+}
+
+<h1>Minimal layout</h1>
+<p>No nav bar, no footer, no Bootstrap -- this page opted out of the site chrome entirely
+via <code>Layout = null</code> in <code>_MinimalLayout.cshtml</code>.</p>
+<p><a href="/LayoutDemo/Index">back to layout demo</a> (plain &lt;a&gt;, not a tag helper --
+this page has no shared layout to inherit tag-helper imports' visual styling from, though
+<code>_ViewImports.cshtml</code> registrations still apply since they're view-wide, not layout-wide)</p>

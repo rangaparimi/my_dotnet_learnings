@@ -1,0 +1,10 @@
+@{
+    // Teaching-only layout for one purpose: RenderSectionAsync(required: true).
+    // Unlike Sidebar above, a view using THIS layout has no choice -- if it
+    // doesn't define @section Footer, rendering throws InvalidOperationException
+    // at request time (not at compile time). Proved live in Section 9 notes.
+    Layout = "_Layout";
+}
+@RenderBody()
+<hr />
+@await RenderSectionAsync("Footer", required: true)

@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Required Section Demo";
+    Layout = "_RequiredSectionLayout";
+}
+
+<h1>Required section demo</h1>
+<p><code>_RequiredSectionLayout.cshtml</code> declares
+<code>@@await RenderSectionAsync("Footer", required: true)</code>. Omitting the section below
+throws at request time: <code>InvalidOperationException: The layout page
+'/Views/Shared/_RequiredSectionLayout.cshtml' cannot find the section 'Footer' in the content
+page '/Views/LayoutDemo/RequiredSectionDemo.cshtml'.</code> -- proved live, then fixed by adding
+the section back.</p>
+
+@section Footer {
+    <p><em>This is the required Footer section. Without this block, the page 500s.</em></p>
+}

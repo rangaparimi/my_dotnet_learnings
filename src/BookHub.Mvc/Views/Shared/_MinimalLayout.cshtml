@@ -1,0 +1,16 @@
+@{
+    // Layout = null opts a page OUT of the site chrome entirely -- no nav bar,
+    // no footer, not even the shared Bootstrap stylesheet. Useful for print
+    // views, embeddable widgets, or anything meant to stand alone.
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>
